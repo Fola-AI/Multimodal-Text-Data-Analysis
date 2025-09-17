@@ -4,6 +4,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Gradio](https://img.shields.io/badge/Gradio-4.25+-orange.svg)](https://gradio.app/)
 
+
+
+<img width="1690" height="1166" alt="Screenshot 2025-09-17 at 12 48 08" src="https://github.com/user-attachments/assets/36fd8b47-be28-409f-a9c8-26fc03fe7cf0" />
+
+
 A comprehensive, multi-modal text analytics platform that combines smart column detection, advanced NLP processing, and multiple AI model integrations to provide actionable insights from customer feedback and text data.
 
 ## Features
