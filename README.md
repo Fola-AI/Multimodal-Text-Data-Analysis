@@ -1,62 +1,69 @@
-📊 Enhanced Text Analytics AI Agent
-Show Image
-Show Image
-Show Image
+# Enhanced Text Analytics AI Agent
+
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Gradio](https://img.shields.io/badge/Gradio-4.25+-orange.svg)](https://gradio.app/)
+
 A comprehensive, multi-modal text analytics platform that combines smart column detection, advanced NLP processing, and multiple AI model integrations to provide actionable insights from customer feedback and text data.
-🚀 Features
-Core Analytics
 
-Smart Column Detection: Automatically identifies text, ID, product, and date columns
-Sentiment Analysis: TextBlob-powered sentiment classification with numerical scoring
-Topic Extraction: Multi-level topic identification using noun phrases and frequency analysis
-Actionable Insights: Dictionary-based extraction of improvement suggestions
-Advanced Search: TF-IDF vectorized semantic search with synonym expansion
+## Features
 
-AI Model Integration
+### Core Analytics
+- **Smart Column Detection**: Automatically identifies text, ID, product, and date columns
+- **Sentiment Analysis**: TextBlob-powered sentiment classification with numerical scoring
+- **Topic Extraction**: Multi-level topic identification using noun phrases and frequency analysis
+- **Actionable Insights**: Dictionary-based extraction of improvement suggestions
+- **Advanced Search**: TF-IDF vectorized semantic search with synonym expansion
 
-Multi-Provider Support: OpenAI, Anthropic Claude, Deepseek, Groq, Google Gemini
-Dynamic Model Switching: Change AI models on-the-fly
-Unified Interface: Consistent API across different providers
-AI-Powered Insights: Generate high-level analysis using selected AI models
+### AI Model Integration
+- **Multi-Provider Support**: OpenAI, Anthropic Claude, Deepseek, Groq, Google Gemini
+- **Dynamic Model Switching**: Change AI models on-the-fly
+- **Unified Interface**: Consistent API across different providers
+- **AI-Powered Insights**: Generate high-level analysis using selected AI models
 
-Data Processing
+### Data Processing
+- **Memory Efficient**: Smart data extraction and garbage collection
+- **Multiple Formats**: Support for CSV, Excel (.xlsx, .xls), and JSON files
+- **Batch Processing**: Handle large datasets efficiently
+- **Export Options**: Export results in Excel or CSV formats
 
-Memory Efficient: Smart data extraction and garbage collection
-Multiple Formats: Support for CSV, Excel (.xlsx, .xls), and JSON files
-Batch Processing: Handle large datasets efficiently
-Export Options: Export results in Excel or CSV formats
+### Visualization & Interface
+- **Interactive Charts**: Plotly-powered visualizations
+- **Web Interface**: User-friendly Gradio-based UI
+- **Real-time Processing**: Live feedback during data processing
+- **Multiple Views**: Sentiment distribution, topic analysis, trends over time
 
-Visualization & Interface
+## Table of Contents
 
-Interactive Charts: Plotly-powered visualizations
-Web Interface: User-friendly Gradio-based UI
-Real-time Processing: Live feedback during data processing
-Multiple Views: Sentiment distribution, topic analysis, trends over time
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Configuration](#configuration)
+- [Usage Guide](#usage-guide)
+- [API Documentation](#api-documentation)
+- [Architecture](#architecture)
+- [Contributing](#contributing)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
 
-📋 Table of Contents
+## Installation
 
-Installation
-Quick Start
-Configuration
-Usage Guide
-API Documentation
-Architecture
-Contributing
-Troubleshooting
-License
+### Prerequisites
 
-🛠 Installation
-Prerequisites
+- Python 3.8 or higher
+- pip package manager
+- Git (for cloning the repository)
 
-Python 3.8 or higher
-pip package manager
-Git (for cloning the repository)
+### Step 1: Clone the Repository
 
-Step 1: Clone the Repository
-bashgit clone https://github.com/yourusername/text-analytics-ai-agent.git
+```bash
+git clone https://github.com/yourusername/text-analytics-ai-agent.git
 cd text-analytics-ai-agent
-Step 2: Create Virtual Environment
-bash# Create virtual environment
+```
+
+### Step 2: Create Virtual Environment
+
+```bash
+# Create virtual environment
 python -m venv venv
 
 # Activate virtual environment
@@ -64,241 +71,296 @@ python -m venv venv
 venv\Scripts\activate
 # On macOS/Linux:
 source venv/bin/activate
-Step 3: Install Dependencies
-bashpip install -r requirements.txt
-Step 4: Download NLTK Data
-pythonimport nltk
+```
+
+### Step 3: Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4: Download NLTK Data
+
+```python
+import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('omw-1.4')
 nltk.download('brown')
-Step 5: Download TextBlob Corpora
-bashpython -m textblob.download_corpora
-⚙️ Configuration
-Environment Variables
-Create a .env file in the project root directory:
-env# AI Model API Keys (add only the ones you plan to use)
+```
+
+### Step 5: Download TextBlob Corpora
+
+```bash
+python -m textblob.download_corpora
+```
+
+## Configuration
+
+### Environment Variables
+
+Create a `.env` file in the project root directory:
+
+```env
+# AI Model API Keys (add only the ones you plan to use)
 ANTHROPIC_API_KEY=your_anthropic_api_key_here
 OPENAI_API_KEY=your_openai_api_key_here
 DEEPSEEK_API_KEY=your_deepseek_api_key_here
 GROQ_API_KEY=your_groq_api_key_here
 GOOGLE_API_KEY=your_google_gemini_api_key_here
-Obtaining API Keys
-ProviderHow to Get API KeyDocumentationOpenAIOpenAI PlatformOpenAI DocsAnthropicAnthropic ConsoleAnthropic DocsDeepseekDeepseek PlatformDeepseek DocsGroqGroq ConsoleGroq DocsGoogleGoogle AI StudioGemini Docs
-Note: The system works with any combination of API keys. You don't need all providers configured.
-🚀 Quick Start
-Basic Usage
+```
 
-Start the Application:
+### Obtaining API Keys
 
-bash   python Multimodal_Text_Analytics.py
+| Provider | How to Get API Key | Documentation |
+|----------|-------------------|---------------|
+| **OpenAI** | [OpenAI Platform](https://platform.openai.com/api-keys) | [OpenAI Docs](https://platform.openai.com/docs) |
+| **Anthropic** | [Anthropic Console](https://console.anthropic.com/) | [Anthropic Docs](https://docs.anthropic.com/) |
+| **Deepseek** | [Deepseek Platform](https://platform.deepseek.com/) | [Deepseek Docs](https://platform.deepseek.com/docs) |
+| **Groq** | [Groq Console](https://console.groq.com/) | [Groq Docs](https://console.groq.com/docs) |
+| **Google** | [Google AI Studio](https://aistudio.google.com/) | [Gemini Docs](https://ai.google.dev/docs) |
 
-Open the Web Interface:
+**Note**: The system works with any combination of API keys. You don't need all providers configured.
 
-The application will provide a local URL (typically http://127.0.0.1:7860)
-A public sharing link will also be generated automatically
+## Quick Start
 
+### Basic Usage
 
-Upload Your Data:
+1. **Start the Application**:
+   ```bash
+   python Multimodal_Text_Analytics.py
+   ```
 
-Select an AI model from the dropdown
-Upload a CSV, Excel, or JSON file containing text data
-Click "Process File"
+2. **Open the Web Interface**: 
+   - The application will provide a local URL (typically `http://127.0.0.1:7860`)
+   - A public sharing link will also be generated automatically
 
+3. **Upload Your Data**:
+   - Select an AI model from the dropdown
+   - Upload a CSV, Excel, or JSON file containing text data
+   - Click "Process File"
 
-Explore Results:
+4. **Explore Results**:
+   - View processing status and AI insights
+   - Search through your data
+   - Generate visualizations
+   - Export processed results
 
-View processing status and AI insights
-Search through your data
-Generate visualizations
-Export processed results
+### Sample Data Format
 
-
-
-Sample Data Format
 Your data should contain text columns (comments, feedback, reviews, etc.). The system automatically detects:
-csvid,customer_feedback,product_name,date,rating
+
+```csv
+id,customer_feedback,product_name,date,rating
 1,"Great product but delivery was slow","Widget A","2024-01-15",4
 2,"Poor quality, broke after one day","Widget B","2024-01-16",1
 3,"Excellent customer service, very helpful","Service","2024-01-17",5
-📖 Usage Guide
-1. Upload & Process Tab
-File Upload:
+```
 
-Supported formats: .csv, .xlsx, .xls, .json
-Automatic column detection for text, ID, product, and date fields
-Memory-efficient processing with progress feedback
+## Usage Guide
 
-AI Model Selection:
+### 1. Upload & Process Tab
 
-Choose from available AI providers
-Switch models dynamically
-Generate AI-powered insights from processed data
+**File Upload**:
+- Supported formats: `.csv`, `.xlsx`, `.xls`, `.json`
+- Automatic column detection for text, ID, product, and date fields
+- Memory-efficient processing with progress feedback
 
-Processing Results:
+**AI Model Selection**:
+- Choose from available AI providers
+- Switch models dynamically
+- Generate AI-powered insights from processed data
 
-Smart column detection summary
-Data preview (first 10 rows)
-Downloadable processed file with analysis columns
+**Processing Results**:
+- Smart column detection summary
+- Data preview (first 10 rows)
+- Downloadable processed file with analysis columns
 
-2. Search Tab
-Semantic Search:
+### 2. Search Tab
 
-Enter keywords to find relevant text entries
-Synonym expansion for better matching
-Similarity scoring with exact match boosting
-Export search results
+**Semantic Search**:
+- Enter keywords to find relevant text entries
+- Synonym expansion for better matching
+- Similarity scoring with exact match boosting
+- Export search results
 
-Search Features:
+**Search Features**:
+- TF-IDF vectorized search
+- Cosine similarity ranking
+- Multi-term query support
+- Results include sentiment and topics
 
-TF-IDF vectorized search
-Cosine similarity ranking
-Multi-term query support
-Results include sentiment and topics
+### 3. Visualizations Tab
 
-3. Visualizations Tab
-Available Visualizations:
+**Available Visualizations**:
+- **Sentiment Distribution**: Pie chart of positive/negative/neutral sentiment
+- **Topic Distribution**: Bar chart of most common topics
+- **Sentiment by Topic**: Heatmap showing sentiment patterns across topics
+- **Sentiment Timeline**: Trend analysis over time (if date data available)
+- **Top Insights**: Most frequent actionable insights
 
-Sentiment Distribution: Pie chart of positive/negative/neutral sentiment
-Topic Distribution: Bar chart of most common topics
-Sentiment by Topic: Heatmap showing sentiment patterns across topics
-Sentiment Timeline: Trend analysis over time (if date data available)
-Top Insights: Most frequent actionable insights
+**Interactive Features**:
+- Plotly-powered interactive charts
+- Zoom, pan, and hover functionality
+- Downloadable chart images
 
-Interactive Features:
+### 4. Export Tab
 
-Plotly-powered interactive charts
-Zoom, pan, and hover functionality
-Downloadable chart images
+**Export Options**:
+- **Excel Format**: Full analysis with formatting
+- **CSV Format**: Lightweight, compatible format
+- **Timestamp**: Automatic file naming with timestamps
 
-4. Export Tab
-Export Options:
+**Export Contents**:
+- Original data plus analysis columns
+- Sentiment scores and classifications
+- Extracted topics (3 levels)
+- Actionable insights
+- Search scores (if applicable)
 
-Excel Format: Full analysis with formatting
-CSV Format: Lightweight, compatible format
-Timestamp: Automatic file naming with timestamps
+## Architecture
 
-Export Contents:
+### Core Components
 
-Original data plus analysis columns
-Sentiment scores and classifications
-Extracted topics (3 levels)
-Actionable insights
-Search scores (if applicable)
-
-🏗 Architecture
-Core Components
+```
 ├── SmartColumnDetector     # Automatic column type detection
 ├── EnhancedTextProcessor   # NLP processing and insights extraction
 ├── TextSearchEngine        # Advanced search with semantic capabilities
 ├── AIModelManager         # Multi-provider AI model integration
 └── EnhancedTextAnalyzer   # Main orchestration class
-Data Flow
+```
 
-File Upload → Smart column detection → Data extraction
-Text Processing → Sentiment analysis → Topic extraction → Insights generation
-Search Index → TF-IDF vectorization → Similarity calculations
-AI Analysis → Sample selection → Prompt generation → Insight generation
-Visualization → Data aggregation → Chart generation → Interactive display
+### Data Flow
 
-Processing Pipeline
-mermaidgraph LR
-    A[Raw Data] --> B[Column Detection]
-    B --> C[Text Cleaning]
-    C --> D[Sentiment Analysis]
-    D --> E[Topic Extraction]
-    E --> F[Insights Generation]
-    F --> G[Search Index]
-    G --> H[Visualizations]
-    H --> I[Export Options]
-🤝 Contributing
+1. **File Upload** → Smart column detection → Data extraction
+2. **Text Processing** → Sentiment analysis → Topic extraction → Insights generation
+3. **Search Index** → TF-IDF vectorization → Similarity calculations
+4. **AI Analysis** → Sample selection → Prompt generation → Insight generation
+5. **Visualization** → Data aggregation → Chart generation → Interactive display
+
+### Processing Pipeline
+
+```
+Raw Data → Column Detection → Text Cleaning → Sentiment Analysis → 
+Topic Extraction → Insights Generation → Search Index → 
+Visualizations → Export Options
+```
+
+## Contributing
+
 We welcome contributions! Here's how you can help:
-Development Setup
 
-Fork the repository
-Create a feature branch: git checkout -b feature-name
-Make your changes
-Add tests for new functionality
-Run existing tests: python -m pytest tests/
-Commit changes: git commit -am 'Add feature'
-Push to branch: git push origin feature-name
-Create a Pull Request
+### Development Setup
 
-Contribution Areas
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Make your changes
+4. Add tests for new functionality
+5. Run existing tests: `python -m pytest tests/`
+6. Commit changes: `git commit -am 'Add feature'`
+7. Push to branch: `git push origin feature-name`
+8. Create a Pull Request
 
-New AI Providers: Add support for additional AI APIs
-Enhanced NLP: Improve topic extraction and sentiment analysis
-Visualizations: Create new chart types and insights
-Performance: Optimize processing for larger datasets
-Documentation: Improve guides and examples
-Testing: Add comprehensive test coverage
+### Contribution Areas
 
-Code Style
+- **New AI Providers**: Add support for additional AI APIs
+- **Enhanced NLP**: Improve topic extraction and sentiment analysis
+- **Visualizations**: Create new chart types and insights
+- **Performance**: Optimize processing for larger datasets
+- **Documentation**: Improve guides and examples
+- **Testing**: Add comprehensive test coverage
 
-Follow PEP 8 Python style guidelines
-Use type hints where appropriate
-Add docstrings for all functions and classes
-Include inline comments for complex logic
+### Code Style
 
-🔧 Troubleshooting
-Common Issues
-1. NLTK Data Missing
+- Follow PEP 8 Python style guidelines
+- Use type hints where appropriate
+- Add docstrings for all functions and classes
+- Include inline comments for complex logic
+
+## Troubleshooting
+
+### Common Issues
+
+**1. NLTK Data Missing**
+```
 Error: Resource punkt not found
-Solution: Run the NLTK download commands in the installation section.
-2. TextBlob Corpora Missing
+```
+**Solution**: Run the NLTK download commands in the installation section.
+
+**2. TextBlob Corpora Missing**
+```
 Error: Resource 'corpora/brown' not found
-Solution: Run python -m textblob.download_corpora
-3. API Key Issues
+```
+**Solution**: Run `python -m textblob.download_corpora`
+
+**3. API Key Issues**
+```
 Error: No API key provided
-Solution: Check your .env file configuration and ensure API keys are valid.
-4. Memory Issues with Large Files
+```
+**Solution**: Check your `.env` file configuration and ensure API keys are valid.
+
+**4. Memory Issues with Large Files**
+```
 MemoryError: Unable to allocate array
-Solution: Process files in smaller chunks or increase system memory.
-5. Gradio Port Conflicts
+```
+**Solution**: Process files in smaller chunks or increase system memory.
+
+**5. Gradio Port Conflicts**
+```
 Error: Port 7860 is already in use
-Solution: The application will automatically find an available port.
-Performance Optimization
-For Large Datasets:
+```
+**Solution**: The application will automatically find an available port.
 
-Process files with < 50,000 rows for optimal performance
-Use CSV format for faster loading
-Close unnecessary applications to free memory
+### Performance Optimization
 
-For Slow AI Responses:
+**For Large Datasets**:
+- Process files with < 50,000 rows for optimal performance
+- Use CSV format for faster loading
+- Close unnecessary applications to free memory
 
-Check internet connection
-Verify API key limits haven't been exceeded
-Try switching to a different AI provider
+**For Slow AI Responses**:
+- Check internet connection
+- Verify API key limits haven't been exceeded
+- Try switching to a different AI provider
 
-Getting Help
+### Getting Help
 
-GitHub Issues: Report bugs and request features
-Documentation: Check this README and inline code comments
-Community: Join discussions in the Issues section
+- **GitHub Issues**: Report bugs and request features
+- **Documentation**: Check this README and inline code comments
+- **Community**: Join discussions in the Issues section
 
-📊 Performance Benchmarks
-Dataset SizeProcessing TimeMemory UsageRecommended1K rows10-30 seconds200MB✅ Optimal10K rows1-3 minutes500MB✅ Good50K rows5-15 minutes1.5GB⚠️ Caution100K+ rows15+ minutes3GB+❌ Consider chunking
-🛣 Roadmap
-Version 2.0 (Planned)
+## Performance Benchmarks
 
- Real-time data streaming support
- Custom AI model integration
- Advanced topic modeling (LDA, BERTopic)
- Multi-language support
- API endpoint for programmatic access
+| Dataset Size | Processing Time | Memory Usage | Recommended |
+|--------------|----------------|--------------|-------------|
+| 1K rows      | 10-30 seconds  | 200MB       | Optimal     |
+| 10K rows     | 1-3 minutes    | 500MB       | Good        |
+| 50K rows     | 5-15 minutes   | 1.5GB       | Caution     |
+| 100K+ rows   | 15+ minutes    | 3GB+        | Consider chunking |
 
-Version 2.1 (Future)
+## Roadmap
 
- Automated report generation
- Integration with business intelligence tools
- Custom visualization builder
- Advanced export options (PDF reports)
- User authentication and data persistence
+### Version 2.0 (Planned)
+- [ ] Real-time data streaming support
+- [ ] Custom AI model integration
+- [ ] Advanced topic modeling (LDA, BERTopic)
+- [ ] Multi-language support
+- [ ] API endpoint for programmatic access
 
-📝 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+### Version 2.1 (Future)
+- [ ] Automated report generation
+- [ ] Integration with business intelligence tools
+- [ ] Custom visualization builder
+- [ ] Advanced export options (PDF reports)
+- [ ] User authentication and data persistence
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+```
 MIT License
 
 Copyright (c) 2024 [Your Name]
@@ -320,17 +382,22 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-🙏 Acknowledgments
+```
 
-Gradio Team: For the excellent web interface framework
-Hugging Face: For NLP tools and model hosting
-Plotly: For interactive visualization capabilities
-NLTK Team: For comprehensive natural language processing tools
-TextBlob: For simple and effective sentiment analysis
-scikit-learn: For machine learning algorithms and utilities
+## Acknowledgments
 
-📞 Support
+- **Gradio Team**: For the web interface framework
+- **Hugging Face**: For NLP tools and model hosting
+- **Plotly**: For interactive visualization capabilities
+- **NLTK Team**: For comprehensive natural language processing tools
+- **TextBlob**: For sentiment analysis capabilities
+- **scikit-learn**: For machine learning algorithms and utilities
 
-Email: your.email@example.com
-GitHub Issues: Create an issue
-Documentation: Wiki
+## Support
+
+- **GitHub Issues**: [Create an issue](https://github.com/yourusername/text-analytics-ai-agent/issues)
+- **Documentation**: [Wiki](https://github.com/yourusername/text-analytics-ai-agent/wiki)
+
+---
+
+**Made for the open source community**
